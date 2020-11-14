@@ -13,7 +13,8 @@ struct ContentView: View {
     @State var alertIsVisible: Bool = false
     @State var sliderValue: Double = 0.0
     @State var targetNumber: Int = Int.random(in: 1...100)
-    
+    @State var userScore = 0
+    @State var round = 1
     
     var body: some View {
         
@@ -35,21 +36,27 @@ struct ContentView: View {
                 self.alertIsVisible = true
             }) {
                 Text("Hit Me")
-                
+            // 4. Alert for score and slider value
             }.alert(isPresented: $alertIsVisible) { () ->
                 Alert in
-                return Alert(title: Text("Hey There!"), message: Text(
+                return Alert(title: Text(alertTitle()), message: Text(
                     "The slider's value is:  \(sliderValueRounded()).\n" +
                     "You scored \(pointsForCurrentRound())"
-                ), dismissButton: .default(Text("Play Again")))
+                ), dismissButton: .default(Text("Play Again")) {
+                    self.userScore = self.userScore + pointsForCurrentRound()
+                    self.targetNumber = Int.random(in: 1...100)
+                    self.round = self.round + 1
+                })
             }
             Spacer()
             HStack(spacing: 30) {
-                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {
+                    self.newGame()
+                }) {
                     Text("Start Over")
                 }
-                Text("Score: 99999")
-                Text("Round: 2")
+                Text("Score: \(userScore)")
+                Text("Round: \(round)")
                 Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Info")
                 }
@@ -61,9 +68,47 @@ struct ContentView: View {
         return Int(sliderValue.rounded())
     }
     
-    func pointsForCurrentRound() -> Int {
-        return 100 - abs(targetNumber - sliderValueRounded())
+    func amountOff() -> Int {
+        abs(targetNumber - sliderValueRounded())
     }
+    
+    func pointsForCurrentRound() -> Int {
+        let maximumScore = 100
+        let difference = amountOff()
+        let bonus: Int
+        if difference == 0 {
+            bonus = 100
+        } else if difference == 1 {
+            bonus = 50
+        } else {
+            bonus = 0
+        }
+        return maximumScore - difference + bonus
+    }
+    
+    func alertTitle() -> String {
+        let difference = abs(targetNumber - sliderValueRounded())
+        let title: String
+        if difference == 0 {
+            title = "Perfect!"
+        } else if difference < 5 {
+            title = "You almost had it"
+        } else if difference <= 10 {
+            title = "Not bad"
+        } else {
+            title = "Are you even trying"
+        }
+        return title
+    }
+    
+    func newGame() {
+        userScore = 0
+        round = 1
+        targetNumber = Int.random(in: 1...100)
+        sliderValue = 50.0
+        
+    }
+    
 }
 
 
