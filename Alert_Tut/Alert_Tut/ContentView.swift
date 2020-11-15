@@ -16,6 +16,12 @@ struct ContentView: View {
     @State var userScore = 0
     @State var round = 1
     
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            <#code#>
+        }
+    }
+    
     var body: some View {
         
         VStack {
