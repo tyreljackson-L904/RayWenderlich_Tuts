@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var targetValue: Int = 0
     
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetLabel: UILabel!
 
     /// INITIATE UPON START OF APPLICATION
     ///
@@ -29,8 +30,12 @@ class ViewController: UIViewController {
     /// ALERT POPUP MESSAGE
     @IBAction func showAlert() {
         
-        let message = "The value of the slider is now: \(currentValue)" +
-        "\nThe target value is: \(targetValue)"
+        
+        let difference = abs(targetValue - currentValue)
+        
+        let points = 100 - difference
+        
+        let message = "You scored \(points) points"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         
@@ -53,7 +58,14 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
+        updateLabels()
     }
+    
+    func updateLabels() {
+        targetLabel.text = String(targetValue)
+    }
+    
+    
 
 }
 
