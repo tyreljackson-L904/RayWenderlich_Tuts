@@ -12,12 +12,15 @@ struct ContentView: View {
     @State private var showAlert: Bool = false
     @State private var sliderValue: Double = 50.0
     
+    // create new instance of Game model
+    @State private var game: Game = Game()
+    
     var body: some View {
         VStack {
             Text("PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
-            Text("89")
+            Text(String(game.target))
                 .fontWeight(.black)
                 .font(.system(size: 28))
             HStack {
@@ -35,7 +38,7 @@ struct ContentView: View {
                     .fontWeight(.bold)
             })
             .alert(isPresented: $showAlert) {
-                let roundedValue: Int = Int(self.sliderValue)
+                let roundedValue: Int = Int(self.sliderValue.rounded())
                 
                 return Alert(title: Text("Nice One"), message: Text("The slide value is  \(roundedValue)"))
             }
