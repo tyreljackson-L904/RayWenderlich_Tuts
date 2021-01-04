@@ -40,7 +40,7 @@ struct ContentView: View {
             .alert(isPresented: $showAlert) {
                 let roundedValue: Int = Int(self.sliderValue.rounded())
                 
-                return Alert(title: Text("Nice One"), message: Text("The slide value is  \(roundedValue)"))
+                return Alert(title: Text("Nice One"), message: Text("The slide value is  \(roundedValue).\n" + "You scored \(self.game.points(sliderValue: roundedValue)) points this round"))
             }
                 .frame(width: 125, height: 65)
                 .background(Color.blue)
