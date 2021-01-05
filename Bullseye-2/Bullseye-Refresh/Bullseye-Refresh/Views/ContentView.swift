@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             
-            Color("BackgroundColor").edgesIgnoringSafeArea(.all)
+            BackgroundView(game: $game)
             
             VStack {
                 InstructionsView(game: $game)
@@ -45,7 +45,7 @@ struct InstructionsView: View {
             InstructionText(text: "Put the bullseye as close as you can to")
                 .padding(.leading, 30)
                 .padding(.trailing, 30)
-                .padding(.bottom)
+                .padding(.top, 30)
             BigNumberText(text: String(game.target))
         }
     }

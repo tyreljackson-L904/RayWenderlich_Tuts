@@ -15,6 +15,7 @@ struct InstructionText: View {
         Text(text.uppercased())
             .kerning(2.0)
             .fontWeight(.bold)
+            .font(.system(size: 14))
             .lineSpacing(4.0)
             .multilineTextAlignment(.center)
             .foregroundColor(Color("TextView"))
