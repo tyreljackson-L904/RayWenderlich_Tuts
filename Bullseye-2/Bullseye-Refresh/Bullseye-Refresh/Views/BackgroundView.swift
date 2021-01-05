@@ -40,14 +40,14 @@ struct BottomView: View {
     
     var body: some View {
         HStack {
-            NumberView(title: "Score", text: String(game.score))
+            RoundedRectTextView(title: "Score", text: String(game.score))
             Spacer()
-            NumberView(title: "Round", text: String(game.round))
+            RoundedRectTextView(title: "Round", text: String(game.round))
         }
     }
 }
 
-struct NumberView: View {
+struct LabelTextView: View {
     var title: String
     var text: String
     
