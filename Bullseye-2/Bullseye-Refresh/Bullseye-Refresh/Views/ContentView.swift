@@ -22,15 +22,21 @@ struct ContentView: View {
             
             VStack {
                 InstructionsView(game: $game)
-                
-                SliderView(sliderValue: $sliderValue)
-                
-                HitMeButtonView(showAlert: $showAlert, sliderValue: $sliderValue, game: $game)
+                    .padding(.bottom, showAlert ? 0 : 100)
+                if showAlert {
+                    PointsView(showAlert: $showAlert, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
+                } else {
+                    HitMeButtonView(showAlert: $showAlert, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
+                }
             }
-            .padding()
-            .padding(.vertical)
+            
+            if !showAlert {
+                SliderView(sliderValue: $sliderValue)
+                    .transition(.scale)
+            }
         }
-        
     }
 }
 
@@ -73,8 +79,9 @@ struct HitMeButtonView: View {
     
     var body: some View {
         Button(action: {
-            // do something
-            showAlert.toggle()
+            withAnimation {
+                showAlert.toggle()
+            }
         }, label: {
             Text("HIT ME")
                 .fontWeight(.bold)
@@ -93,13 +100,6 @@ struct HitMeButtonView: View {
                         .stroke(Color.white, lineWidth: 2.0)
                 )
         })
-        .alert(isPresented: $showAlert) {
-            let roundedValue: Int = Int(sliderValue.rounded())
-            let points =  game.points(sliderValue: roundedValue)
-            return Alert(title: Text("Nice One"), message: Text("The slide value is  \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round"), dismissButton: .default(Text("Awesome!")){
-                game.startNewRound(points: points)
-            })
-        }
     }
 }
 

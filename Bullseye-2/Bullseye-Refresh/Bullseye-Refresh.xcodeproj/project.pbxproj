@@ -11,6 +11,7 @@
 		A507981225A3E0EC00FF3AAF /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507981125A3E0EC00FF3AAF /* TextViews.swift */; };
 		A507981C25A4CEC200FF3AAF /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507981B25A4CEC200FF3AAF /* RoundedViews.swift */; };
 		A507982025A4D88900FF3AAF /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507981F25A4D88900FF3AAF /* BackgroundView.swift */; };
+		A507982425ACEB3800FF3AAF /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507982325ACEB3800FF3AAF /* PointsView.swift */; };
 		A5BB7C1925A26B18005E752B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB7C1825A26B18005E752B /* Game.swift */; };
 		A5E155202591376B002ED21B /* Bullseye_RefreshApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E1551F2591376B002ED21B /* Bullseye_RefreshApp.swift */; };
 		A5E155222591376B002ED21B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E155212591376B002ED21B /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 		A507981125A3E0EC00FF3AAF /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		A507981B25A4CEC200FF3AAF /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		A507981F25A4D88900FF3AAF /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		A507982325ACEB3800FF3AAF /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		A5BB7C1825A26B18005E752B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A5E1551C2591376B002ED21B /* Bullseye-Refresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bullseye-Refresh.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E1551F2591376B002ED21B /* Bullseye_RefreshApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullseye_RefreshApp.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				A507981125A3E0EC00FF3AAF /* TextViews.swift */,
 				A507981B25A4CEC200FF3AAF /* RoundedViews.swift */,
 				A507981F25A4D88900FF3AAF /* BackgroundView.swift */,
+				A507982325ACEB3800FF3AAF /* PointsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				A5E155222591376B002ED21B /* ContentView.swift in Sources */,
 				A507981225A3E0EC00FF3AAF /* TextViews.swift in Sources */,
 				A507981C25A4CEC200FF3AAF /* RoundedViews.swift in Sources */,
+				A507982425ACEB3800FF3AAF /* PointsView.swift in Sources */,
 				A5BB7C1925A26B18005E752B /* Game.swift in Sources */,
 				A5E155202591376B002ED21B /* Bullseye_RefreshApp.swift in Sources */,
 			);
