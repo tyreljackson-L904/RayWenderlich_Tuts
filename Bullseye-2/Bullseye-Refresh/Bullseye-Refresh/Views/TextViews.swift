@@ -43,11 +43,42 @@ struct SliderLabelText: View {
     }
 }
 
+struct BodyText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .fontWeight(.semibold)
+            .padding()
+            .multilineTextAlignment(.center)
+            .lineSpacing(12)
+            
+    }
+}
+
+struct ButtonText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .fontWeight(.bold)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color("AccentColor"))
+            .foregroundColor(.white)
+            .cornerRadius(12)
+    }
+}
+
 struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            InstructionText(text: "Instructions")
+            InstructionText(text: "The Slider's Value is")
+                .padding()
             BigNumberText(text: "999")
+            BodyText(text: "You Scored 200 Points\n🎉🎉🎉")
+            ButtonText(text: "Start New Round")
         }
+        .padding()
     }
 }

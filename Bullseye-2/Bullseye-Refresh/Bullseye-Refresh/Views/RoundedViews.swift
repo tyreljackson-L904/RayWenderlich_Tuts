@@ -46,6 +46,7 @@ struct RoundedRectTextView: View {
     var body: some View {
         VStack {
             Text(title.uppercased())
+                .font(.system(size: 14))
                 .kerning(2.0)
                 .padding(.bottom, -3)
             ZStack {
