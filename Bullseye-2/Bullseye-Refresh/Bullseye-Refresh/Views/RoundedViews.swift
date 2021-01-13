@@ -50,7 +50,7 @@ struct RoundedRectTextView: View {
                 .kerning(2.0)
                 .padding(.bottom, -3)
             ZStack {
-                RoundedRectangle(cornerRadius: 21)
+                RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
                     .stroke(lineWidth: Constants.General.strokeWidth)
                     .frame(width: Constants.General.roundRectViewWidth, height: Constants.General.roundRectViewHeight)
                     .foregroundColor(Color("ButtonStrokeColor"))
@@ -62,6 +62,21 @@ struct RoundedRectTextView: View {
     }
 }
 
+struct RoundedTextView: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.title)
+            .foregroundColor(Color("TextView"))
+            .frame(width: Constants.General.roundedViewLength, height: Constants.General.roundedViewLength)
+            .overlay(
+                Circle()
+                    .stroke(Color("LeaderboardRowColor"), lineWidth: Constants.General.strokeWidth)
+            )
+    }
+}
+
 struct PreviewView: View {
     var body: some View {
         VStack(spacing: 10) {
@@ -69,7 +84,7 @@ struct PreviewView: View {
             RoundedImageViewFilled(systemName: "list.dash")
             RoundedRectTextView(title: "Score", text: "0")
             RoundedRectTextView(title: "Round", text: "1")
-
+            RoundedTextView(text: "1")
         }
     }
 }
