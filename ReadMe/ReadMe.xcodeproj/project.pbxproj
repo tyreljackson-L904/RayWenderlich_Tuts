@@ -11,6 +11,8 @@
 		A56FD5C125B39B1D00FAD7D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FD5C025B39B1D00FAD7D6 /* ContentView.swift */; };
 		A56FD5C325B39B1E00FAD7D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56FD5C225B39B1E00FAD7D6 /* Assets.xcassets */; };
 		A56FD5C625B39B1E00FAD7D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56FD5C525B39B1E00FAD7D6 /* Preview Assets.xcassets */; };
+		A56FD5CF25B39C6A00FAD7D6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FD5CE25B39C6A00FAD7D6 /* Book.swift */; };
+		A56FD5D425B39CFC00FAD7D6 /* BookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FD5D325B39CFC00FAD7D6 /* BookViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		A56FD5C225B39B1E00FAD7D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A56FD5C525B39B1E00FAD7D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A56FD5C725B39B1E00FAD7D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A56FD5CE25B39C6A00FAD7D6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A56FD5D325B39CFC00FAD7D6 /* BookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				A56FD5BE25B39B1D00FAD7D6 /* ReadMeApp.swift */,
-				A56FD5C025B39B1D00FAD7D6 /* ContentView.swift */,
+				A56FD5D225B39CEF00FAD7D6 /* Views */,
+				A56FD5D125B39CDE00FAD7D6 /* Models */,
 				A56FD5C225B39B1E00FAD7D6 /* Assets.xcassets */,
 				A56FD5C725B39B1E00FAD7D6 /* Info.plist */,
 				A56FD5C425B39B1E00FAD7D6 /* Preview Content */,
@@ -67,6 +72,23 @@
 				A56FD5C525B39B1E00FAD7D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A56FD5D125B39CDE00FAD7D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A56FD5CE25B39C6A00FAD7D6 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A56FD5D225B39CEF00FAD7D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A56FD5C025B39B1D00FAD7D6 /* ContentView.swift */,
+				A56FD5D325B39CFC00FAD7D6 /* BookViews.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +162,8 @@
 			files = (
 				A56FD5C125B39B1D00FAD7D6 /* ContentView.swift in Sources */,
 				A56FD5BF25B39B1D00FAD7D6 /* ReadMeApp.swift in Sources */,
+				A56FD5CF25B39C6A00FAD7D6 /* Book.swift in Sources */,
+				A56FD5D425B39CFC00FAD7D6 /* BookViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
